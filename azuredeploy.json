@@ -90,6 +90,17 @@
       },
       "resources": [
         {
+          "name": "MSDeploy",
+          "type": "Extensions",
+          "apiVersion": "2015-01-01",
+          "dependsOn": [
+            "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
+          ],
+          "properties": {
+            "packageUri": "https://raw.githubusercontent.com/rasbo/azure-spring-boot-webapp/master/website.zip"
+          }
+        },
+        {
           "apiVersion": "2015-08-01",
           "name": "staging",
           "type": "slots",
@@ -97,7 +108,20 @@
           "dependsOn": [
             "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
           ],
-          "properties": "[variables('siteProperties')]"
+          "properties": { "[variables('siteProperties')]" },
+          "resources": [
+            {
+              "name": "MSDeploy",
+              "type": "Extensions",
+              "apiVersion": "2015-01-01",
+              "dependsOn": [
+                "[concat('Microsoft.Web/Sites/', parameters('siteName'), '-staging')]"
+              ],
+              "properties": {
+                "packageUri": "https://raw.githubusercontent.com/rasbo/azure-spring-boot-webapp/master/website.zip"
+              }
+            }
+          ]
         }
       ]
     }

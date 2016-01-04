@@ -46,6 +46,23 @@
     }
   },
   "variables": {
+    "siteProperties": {
+      "phpVersion": "5.5",
+      "netFrameworkVersion": "v4.0",
+      "use32BitWorkerProcess": false, /* 64-bit platform */
+      "webSocketsEnabled": true,
+      "alwaysOn": true,
+      "requestTracingEnabled": true, /* Failed request tracing, aka 'freb' */
+      "httpLoggingEnabled": true, /* IIS logs (aka Web server logging) */
+      "logsDirectorySizeLimit": 40, /* 40 MB limit for IIS logs */
+      "detailedErrorLoggingEnabled": true, /* Detailed error messages  */
+      "remoteDebuggingEnabled": true,
+      "remoteDebuggingVersion": "VS2013",
+      "defaultDocuments": [
+        "index.html",
+        "hostingstart.html"
+      ]
+    }
   },
   "resources": [
     {
@@ -79,7 +96,8 @@
           "location": "[parameters('siteLocation')]",
           "dependsOn": [
             "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
-          ]
+          ],
+          "properties": "[variables('siteProperties')]"
         }
       ]
     }

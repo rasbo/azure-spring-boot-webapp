@@ -91,8 +91,8 @@
       "resources": [
         {
           "name": "MSDeploy",
-          "type": "Extensions",
-          "apiVersion": "2015-01-01",
+          "type": "extensions",
+          "apiVersion": "2015-08-01",
           "dependsOn": [
             "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
           ],

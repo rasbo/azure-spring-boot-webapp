@@ -98,7 +98,7 @@
                 "name": "web",
                 "type": "config",
                 "dependsOn": [
-                  "[resourceId('Microsoft.Web/Sites/Slots', variables('parameters'), 'staging')]"
+                  "[resourceId('Microsoft.Web/Sites/Slots', parameters('siteName'), 'staging')]"
                 ],
                 "properties": ""
               }

@@ -90,9 +90,9 @@
       },
       "resources": [
         {
-          "name": "MSDeploy",
-          "type": "extensions",
           "apiVersion": "2015-08-01",
+          "name": "MSDeploy1",
+          "type": "extensions",
           "dependsOn": [
             "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
           ],
@@ -111,9 +111,9 @@
           "properties": { "[variables('siteProperties')]" },
           "resources": [
             {
-              "name": "MSDeploy",
-              "type": "Extensions",
-              "apiVersion": "2015-01-01",
+              "apiVersion": "2015-08-01",
+              "name": "MSDeploy2",
+              "type": "extensions",
               "dependsOn": [
                 "[concat('Microsoft.Web/Sites/', parameters('siteName'), '-staging')]"
               ],

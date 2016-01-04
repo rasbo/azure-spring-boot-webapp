@@ -24,12 +24,10 @@
     "sku": {
       "type": "string",
       "allowedValues": [
-        "Free",
-        "Shared",
-        "Basic",
-        "Standard"
+        "Standard",
+        "Premium"
       ],
-      "defaultValue": "Free",
+      "defaultValue": "Standard",
       "metadata": {
         "description": "The pricing tier for the hosting plan."
       }
@@ -41,7 +39,7 @@
         "1",
         "2"
       ],
-      "defaultValue": "0",
+      "defaultValue": "1",
       "metadata": {
         "description": "The instance size of the hosting plan (small, medium, or large)."
       }

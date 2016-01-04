@@ -115,7 +115,7 @@
               "name": "MSDeploy2",
               "type": "extensions",
               "dependsOn": [
-                "[concat('Microsoft.Web/Sites/', parameters('siteName'), '/slots/staging')]"
+                "[resourceId('Microsoft.Web/Sites/Slots', parameters('siteName'), 'staging')]"
               ],
               "properties": {
                 "packageUri": "https://raw.githubusercontent.com/rasbo/azure-spring-boot-webapp/master/website.zip"
